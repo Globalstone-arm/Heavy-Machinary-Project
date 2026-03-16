@@ -135,5 +135,40 @@
     });
 });
     
+$(document).ready(function() {
+  const $langBtn = $('#langBtn');
+  const $langMenu = $('#langMenu');
+  const $selectedFlag = $('#selectedFlag');
+  const $selectedLang = $('#selectedLang');
+
+  // 1. Toggle dropdown visibility
+  $langBtn.on('click', function(event) {
+    event.stopPropagation(); // Prevents document click listener from firing immediately
+    $langMenu.toggleClass('show');
+  });
+
+  // 2. Handle language selection
+  $('#langMenu li').on('click', function() {
+    // Grab data attributes using jQuery's .data() method
+    const newLang = $(this).data('lang');
+    const newFlag = $(this).data('flag');
+
+    // Update the button's icon and text
+    $selectedLang.text(newLang);
+    $selectedFlag.attr('src', newFlag);
+
+    // Close the dropdown
+    $langMenu.removeClass('show');
+  });
+
+  // 3. Close the dropdown if the user clicks outside of it
+  $(document).on('click', function(event) {
+    // Check if the click happened outside the button and the menu
+    if (!$(event.target).closest('#langBtn, #langMenu').length) {
+      $langMenu.removeClass('show');
+    }
+  });
+});
+
 })(jQuery);
 

@@ -745,3 +745,88 @@ h6,
 .wrap-word {
   word-break: break-all;
 }
+
+
+
+
+
+/* Container styling */
+.lang-dropdown {
+  position: relative;
+  display: inline-block;
+  font-family: sans-serif;
+}
+
+/* Button styling */
+.lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.lang-btn:hover {
+  background-color: #f9f9f9;
+}
+
+/* Flag image sizing */
+.lang-btn img, 
+.lang-menu img {
+  width: 20px;
+  height: 14px;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+/* Dropdown menu styling */
+.lang-menu {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  margin: 4px 0 0 0;
+  padding: 0;
+  list-style: none;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  z-index: 10;
+  overflow: hidden; /* Keeps hover states inside the rounded corners */
+}
+
+/* Toggle class for JavaScript */
+.lang-menu.show {
+  display: block;
+}
+
+/* Dropdown item styling (stripped down) */
+.lang-menu li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Anchor tag styling (The clickable area) */
+.lang-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px; /* Padding moved here */
+  text-decoration: none; /* Removes link underline */
+  color: inherit; /* Inherits text color */
+  cursor: pointer;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Hover effect now on the anchor tag */
+.lang-link:hover {
+  background-color: #f0f0f0;
+}
